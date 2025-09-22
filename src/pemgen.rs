@@ -2,7 +2,7 @@ use rcgen::{
     BasicConstraints, Certificate, CertificateParams, DistinguishedName, DnType, IsCa, Issuer,
     KeyPair, KeyUsagePurpose, SanType,
 };
-use std::{fs, thread::scope};
+use std::fs;
 use time::OffsetDateTime;
 
 fn create_ca() -> (Certificate, Issuer<'static, KeyPair>) {
