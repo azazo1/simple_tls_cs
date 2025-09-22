@@ -16,7 +16,13 @@ name = "pemgen"
 path = "src/pemgen.rs"
 
 [dependencies]
+axum = "0.8.4"
+axum-server = {version = "0.7.2", features = ["tls-rustls"]}
 rcgen = "0.14.4"
-reqwest = "0.12.23"
+reqwest = {version = "0.12.23", features = ["rustls-tls"]}
+# rustls = { version = "0.23.32", features = ["ring"] }
+rustls = {version = "0.23.32"}
 time = "0.3.44"
-tokio = "1.47.1"
+tokio = {version = "1.47.1", features = ["macros", "rt-multi-thread"]}
+tracing = "0.1.41"
+tracing-subscriber = "0.3.20"
